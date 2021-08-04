@@ -17,6 +17,10 @@ li {
     width: 98%;
     font-size: 20px;
     color: #A4A4A4;
+    padding-bottom: 16px
+}
+button:hover {
+    background-color: #0000FF;
 }
 /* TO DO LIST */
 .card {
@@ -46,6 +50,7 @@ li {
     right: 15px;
     background: white;
     font-size: 32px;
+    cursor: pointer;
     
 }
 #myList {
@@ -63,4 +68,7 @@ li {
     font-weight: 600;
     color: #F20303;
     
+}
+#buttonDelete {
+    display: contents;
 }
