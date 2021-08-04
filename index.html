@@ -3,8 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/style.css">
         <title>Task-List</title>
+        <link rel="stylesheet" href="styles/reset.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="https://kit.fontawesome.com/778eea4630.js" crossorigin="anonymous"></script>
+        
     </head>
     <body>
         <div class="container">
@@ -13,12 +16,14 @@
                     <h1>Task List</h1>
                 </header>
                 <div class="taskList">
-                    <form id="newTask">
+                    <div id="newTask">
                         <input id="taskName" type="text" placeholder="task name..." />
                         <button class="buttonAddTask" onclick="addNewTask()">+</button>
-                    </form>
-                    <ul id="myTaskList">
+                    </div>
+                    <ul id="myList">
                         <li>Frist Task</li>
+                        <button class="buttonDelete"><i class="fas fa-trash-alt"></i></button>
+                        
                     </ul>
                 </div>
             </div>
