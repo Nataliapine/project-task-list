@@ -17,9 +17,11 @@
                 </header>
                 <div class="taskList">
                     <div id="newTask">
-                        <input id="taskName" type="text" placeholder="task name..." />
-                        <button class="buttonAddTask" onclick="addNewTask()">+</button>
-                        <span id="error"></span>
+                        <form>
+                            <input id="taskName" type="text" placeholder="task name..." />
+                            <button class="buttonAddTask" type="submit" onclick="return addNewTask(event)">+</button>
+                            <span id="error"></span>
+                        </form>
                     </div>
                     
                     <ul id="myList">

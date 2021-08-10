@@ -1,4 +1,8 @@
-function addNewTask() {
+function addNewTask(e) {
+  console.log('e: ', e);
+  debugger;
+  e.preventDefault();
+
   const erro = document.getElementById("error");
   const taskName = document.getElementById("taskName").value; 
   const original = document.getElementById("newElement");
@@ -13,6 +17,8 @@ function addNewTask() {
   clone.getElementsByTagName("span")[0].innerHTML = taskName; 
   document.getElementById("myList").appendChild(clone);
   document.getElementById("taskName").value = ""; 
+
+  // return false;
 }
 
 function removeTask(icon) {
