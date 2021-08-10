@@ -1,6 +1,4 @@
 function addNewTask(e) {
-  console.log('e: ', e);
-  debugger;
   e.preventDefault();
 
   const erro = document.getElementById("error");
@@ -15,13 +13,15 @@ function addNewTask(e) {
 
   clone.removeAttribute("id");
   clone.getElementsByTagName("span")[0].innerHTML = taskName; 
-  document.getElementById("myList").appendChild(clone);
+  document.getElementById("uncompletedTasks").appendChild(clone);
   document.getElementById("taskName").value = ""; 
-
-  // return false;
 }
 
 function removeTask(icon) {
   icon.parentElement.remove();
 }
 
+function moveToCompleted(checkbox) {
+  const tasks = document.getElementById(checkbox.checked ? "completedTasks" : "uncompletedTasks"); 
+  tasks.appendChild(checkbox.parentElement);
+}
