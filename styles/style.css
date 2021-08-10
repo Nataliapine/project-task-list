@@ -89,3 +89,6 @@ ul li:hover {
     background-color: #E9E8E8;
     max-width: 100%;
 }
+#newElement {
+    display: none;
+}
