@@ -15,3 +15,7 @@ function addNewTask() {
   document.getElementById("taskName").value = ""; 
 }
 
+function removeTask(icon) {
+  icon.parentElement.remove();
+}
+

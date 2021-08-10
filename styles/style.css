@@ -61,12 +61,12 @@ button:hover {
     border-radius: 5px;
     background: #f7f7f7;
 }
-.fas {
+#myList .fas {
     float: right;
     position: relative;
-    right: -18px;;
     font-weight: 600;
     color: #F20303;
+    cursor: pointer;
     
 }
 #buttonDelete {
@@ -80,7 +80,6 @@ ul {
     padding: 0;
 }
 ul li {
-    cursor: pointer;
     position: relative;
     list-style-type: none;
     transition: 0.2s;
