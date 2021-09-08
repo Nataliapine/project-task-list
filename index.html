@@ -15,24 +15,24 @@
                 <header>
                     <h1>Task List</h1>
                 </header>
-                <div class="taskList">
-                    <div id="newTask">
+                <div class="task-list">
+                    <div id="new-task">
                         <form>
-                            <input id="taskName" type="text" placeholder="task name..." />
-                            <button class="buttonAddTask" type="submit" onclick="return addNewTask(event)">+</button>
+                            <input id="task-name" type="text" placeholder="task name..."/>
+                            <button class="button-add-task" >+</button>
                             <span id="error"></span>
                         </form>
                     </div>
                     <h2>Uncompleted Tasks:</h2>
-                    <ul id="uncompletedTasks" class="tasks">
-                        <li id="newElement">
+                    <ul id="uncompleted-tasks" class="tasks">
+                        <li id="uncompleted-task-item">
                             <input type="checkbox" name="completed" onchange="moveToCompleted(this)" />
                             <span></span>
                             <i class="fas fa-trash-alt" aria-hidden="true" onclick="removeTask(this)"></i>
                         </li>
                     </ul>
                     <h2>Completed Tasks</h2>
-                    <ul id="completedTasks" class="tasks"></ul>
+                    <ul id="completed-tasks" class="tasks"></ul>
                 </div>
             </div>
         </div>

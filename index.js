@@ -1,30 +1,34 @@
+
+const uncompletedTaskItem = document.getElementById("uncompleted-task-item");
+const form = document.querySelector("form");
+form.addEventListener("submit", addNewTask);
+const taskName = document.getElementById("task-name");
+taskName.addEventListener("keydown", removeValidatorMessage);
+
+function validationMessageThrower() {
+  const error = document.getElementById("error");
+  error.innerText = "Please, write a task name.";
+  setTimeout(() => error.innerText = "", 3000);
+}
+
+function removeValidatorMessage() {
+  error.innerText = "";
+}
+
 function addNewTask(e) {
-  e.preventDefault(); //to add new task when click in enter.0
+  e.preventDefault(); 
 
-  const erro = document.getElementById("error"); 
-  const taskName = document.getElementById("taskName").value; 
-  const original = document.getElementById("newElement"); 
-  const clone = original.cloneNode(true); //creat a copy of new element but without ID.
-
-  /**
-   * TODO:
-   * 1-put time out for error message
-   * 2- erase message if user input is before time out
-   * 
-   */
-  
-  if(taskName === '') {
-    erro.textContent = "Please, write a task name."
-    setTimeout(function() {
-      document.getElementById("error").style.display = 'none';
-  }, 3000);
+  if (!taskName.value) {
+    validationMessageThrower();
     return;
-  };
+  }
 
-  clone.removeAttribute("id"); //remove the list id.
-  clone.getElementsByTagName("span")[0].innerHTML = taskName; //put the text of task.
-  document.getElementById("uncompletedTasks").appendChild(clone);
-  document.getElementById("taskName").value = ""; //remove name of the task after creat new task.
+  const clone = uncompletedTaskItem.cloneNode(true); 
+
+  clone.removeAttribute("id"); 
+  clone.getElementsByTagName("span")[0].innerHTML = taskName.value; 
+  document.getElementById("uncompleted-tasks").appendChild(clone);
+  document.getElementById("task-name").value = ""; 
 }
 
 function removeTask(icon) {
@@ -32,6 +36,6 @@ function removeTask(icon) {
 }
 
 function moveToCompleted(checkbox) {
-  const tasks = document.getElementById(checkbox.checked ? "completedTasks" : "uncompletedTasks"); 
-  tasks.appendChild(checkbox.parentElement); //when clicked in checkbox the task go to completed tasks.
+  const tasks = document.getElementById(checkbox.checked ? "completed-tasks" : "uncompleted-tasks");
+  tasks.appendChild(checkbox.parentElement); 
 }
